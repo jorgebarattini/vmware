@@ -1,0 +1,21 @@
+Deploy OVF using OVFTool
+
+- Download OVFTool from: https://www.vmware.com/support/developer/ovf/
+
+- Execute OVFTool, example:
+
+ovftool.exe --acceptAllEulas -ds="ProdSAN-EQL1-ESX-00" --name=Fortigate01 --net:"Network 1"="VLAN601" --net:"Network 2"="A_DMZ_300" C:\Users\jorgito\Downloads\FGT_VM64-v5-build1138-FORTINET.out.ovf\FortiGate-VM64.ovf  vi://root:password@192.168.1.10/
+
+-ds | Specify Datastore
+--name | Specify name for the VM
+--net:"vmiface"="hostiface" | Map VM network interface to host interface
+C:\Users\jorgito\Downloads\FGT_VM64-v5-build1138-FORTINET.out.ovf\FortiGate-VM64.ovf | OVF to deploy
+vi://root:password@192.168.1.10/ | usr/password/IP of VMWare host
+
+Tested on ESXi 6.0
+
+References:
+
+https://blah.cloud/virtualisation/deploying-ovaovf-remote-vcenter-using-ovftool/
+http://www.virtuallyghetto.com/2012/05/how-to-deploy-ovfova-in-esxi-shell.html
+https://www.vmware.com/support/developer/ovf/ovf350/ovftool-350-userguide.pdf
